@@ -1,4 +1,5 @@
 import express from 'express';
+import Router from './routes/pollRoutes.js';
 import Database from './Database.js';
 import dotenv from 'dotenv';
 
@@ -10,8 +11,6 @@ Database();
 //port
 const PORT = 3000;
 
-app.get('/', (req, res) => {
-  res.send('<h1>hello world </h1>');
-});
+app.use('/poll', Router);
 
 app.listen(PORT, () => console.log(`app is listening on port ${PORT}`));
