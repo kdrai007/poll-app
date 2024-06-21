@@ -1,7 +1,8 @@
-export const NavBar = () => {
+export const NavBar = ({ setCreatingPoll }) => {
   return (
-    <div>
-      this is navBar
-    </div>
+    <nav className="navbar navbar-expand-lg d-flex justify-content-between align-items-center">
+      <span onClick={() => setCreatingPoll(false)} className="navbar-brand cursor-pointer">Home</span>
+      <span className="cursor-pointer" onClick={() => setCreatingPoll(true)}>create polls</span>
+    </nav>
   )
 }
